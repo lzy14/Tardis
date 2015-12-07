@@ -1,6 +1,6 @@
 
 <?php
-
+$type_number=$_POST["select1"]*100+$_POST["select2"]*10+$_POST["select3"];
 $ID=$_GET["id"];
 
 include("conn.php");
@@ -20,12 +20,12 @@ $inventory_number = mysql_result($result, 0);
 }*/
 
 
-if( $inventory_number>=$_POST["select"])
+if( $inventory_number>=$type_number)
 {
 session_start();
 ob_start();
 
-$number=$_POST["select"];
+$number=$type_number;
 
 $Product_ID=$_GET["id"];
 
